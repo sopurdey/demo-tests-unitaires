@@ -6,26 +6,20 @@ public class SaisonTest {
 
 	@Test
 	public void testGetByLabel() {
-		String hiver = "Hiver";
-		Saison saison = Saison.getByLabel(hiver);
-		String resultat = saison.getLibelle();
-		assertEquals(hiver, resultat);
+		Saison saison = Saison.getByLabel("Hiver");
+		assertEquals(Saison.HIVER, saison);
 	}
 	
 	@Test
 	public void testGetByLabelNonCorrespondant() {
-		String hiver = "Hivereee";
-		Saison saison = Saison.getByLabel(hiver);
-		String resultat = saison.getLibelle();
-		assertNull(resultat);
+		Saison saison = Saison.getByLabel("Hivereee");
+		assertNull(saison);
 	}
 	
 	@Test
 	public void testGetByLabelNull() {
-		String hiver = null;
-		Saison saison = Saison.getByLabel(hiver);
-		String resultat = saison.getLibelle();
-		assertNull(resultat);
+		Saison saison = Saison.getByLabel(null);
+		assertNull(saison);
 	}
 
 }
